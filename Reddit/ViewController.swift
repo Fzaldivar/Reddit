@@ -11,9 +11,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Test network
+        
+        let router = PostRouter.top
+        
+        let networkClient = NetworkClient()
+        
+        networkClient.performRequest(route: router) { (result: Result<PostList, Error>) in
+            switch result {
+            case .success(let result):
+                print(result.posts())
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+        
     }
-
-
 }
-
