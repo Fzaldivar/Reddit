@@ -11,11 +11,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var rootCoordinator: PostListCoordinator!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        initialLoading()
         return true
     }
 
+    // MARK: - Initial loader
+    
+    private func initialLoading() {
+        rootCoordinator = PostListCoordinator(navigationController: UINavigationController())
+        rootCoordinator.navigate(animated: false)
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = rootCoordinator.navigationController
+        window?.makeKeyAndVisible()
+    }
 }
 

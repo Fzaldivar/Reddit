@@ -8,6 +8,7 @@ target 'Reddit' do
   # Pods for Reddit
   
     pod 'Alamofire', '5.5.0'
+    pod 'Nuke', '10.4.1'
 
   target 'RedditTests' do
     inherit! :search_paths

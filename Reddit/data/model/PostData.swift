@@ -8,5 +8,6 @@
 import Foundation
 
 struct PostData: Decodable {
-    let children: [PostChild]
+    var children: [PostChild]
+    var after: String
 }
