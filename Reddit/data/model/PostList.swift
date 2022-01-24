@@ -11,7 +11,13 @@ struct PostList: Decodable {
     
     // MARK: - Properties
     
-    let data: PostData
+    var data: PostData
+    
+    // MARK: - Initializer methods
+    
+    init(_ data: PostData = PostData(children: [], after: "")) {
+        self.data = data
+    }
     
     // MARK: - Utility methods
     

@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		5D7922732C005E446A2A88B0 /* Pods_Reddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9F0FA318F7B6ABCC7AE99E /* Pods_Reddit.framework */; };
 		6C5AF0DDA482F263FF033313 /* Pods_Reddit_RedditUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27FF6B7C21949CCA958FA80 /* Pods_Reddit_RedditUITests.framework */; };
+		7B32CEFA279DBC87006BCEEB /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CEF9279DBC87006BCEEB /* PostListViewController.swift */; };
+		7B32CEFC279DBC96006BCEEB /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CEFB279DBC96006BCEEB /* PostListViewModel.swift */; };
+		7B32CEFE279DBCA9006BCEEB /* PostListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CEFD279DBCA9006BCEEB /* PostListCoordinator.swift */; };
+		7B32CF00279DBCED006BCEEB /* StoryboardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CEFF279DBCED006BCEEB /* StoryboardBase.swift */; };
+		7B32CF02279DBD45006BCEEB /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF01279DBD45006BCEEB /* View.swift */; };
+		7B32CF04279DBD88006BCEEB /* Coordinated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF03279DBD88006BCEEB /* Coordinated.swift */; };
+		7B32CF06279DBDDB006BCEEB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF05279DBDDB006BCEEB /* ViewModel.swift */; };
+		7B32CF09279DBE72006BCEEB /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF08279DBE72006BCEEB /* BaseCoordinator.swift */; };
+		7B32CF0B279DBE9F006BCEEB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF0A279DBE9F006BCEEB /* Coordinator.swift */; };
+		7B32CF0E279DC02D006BCEEB /* PostList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B32CF0D279DC02D006BCEEB /* PostList.storyboard */; };
+		7B32CF12279DD342006BCEEB /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF10279DD342006BCEEB /* PostTableViewCell.swift */; };
+		7B32CF13279DD342006BCEEB /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B32CF11279DD342006BCEEB /* PostTableViewCell.xib */; };
+		7B32CF15279DD386006BCEEB /* PostTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF14279DD386006BCEEB /* PostTableViewCellViewModel.swift */; };
+		7B32CF17279DD3C1006BCEEB /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF16279DD3C1006BCEEB /* CellViewModel.swift */; };
+		7B32CF1A279DD858006BCEEB /* TableView+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF19279DD858006BCEEB /* TableView+Config.swift */; };
+		7B32CF1C279DD87C006BCEEB /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF1B279DD87C006BCEEB /* ReusableView.swift */; };
+		7B32CF1E279DD8B5006BCEEB /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF1D279DD8B5006BCEEB /* NibLoadableView.swift */; };
+		7B32CF20279DD9EF006BCEEB /* TableViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF1F279DD9EF006BCEEB /* TableViewConfigurable.swift */; };
+		7B32CF22279DE32B006BCEEB /* UIImageView+Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF21279DE32B006BCEEB /* UIImageView+Downloader.swift */; };
 		7B6B608F279C9FEC00EE38EC /* APIConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B608E279C9FEC00EE38EC /* APIConfigurationProtocol.swift */; };
 		7B6B6092279CA10700EE38EC /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B6091279CA10700EE38EC /* ApiConfig.swift */; };
 		7B6B6094279CA1CA00EE38EC /* PolicyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B6093279CA1CA00EE38EC /* PolicyConfiguration.swift */; };
@@ -21,8 +40,6 @@
 		7B6B60A7279D0E4800EE38EC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B60A6279D0E4800EE38EC /* Post.swift */; };
 		7B6B60A9279D180200EE38EC /* PostChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B60A8279D180200EE38EC /* PostChild.swift */; };
 		7BF30B75279C8AF4007E840D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF30B74279C8AF4007E840D /* AppDelegate.swift */; };
-		7BF30B79279C8AF4007E840D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF30B78279C8AF4007E840D /* ViewController.swift */; };
-		7BF30B7C279C8AF4007E840D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF30B7A279C8AF4007E840D /* Main.storyboard */; };
 		7BF30B7E279C8AF6007E840D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BF30B7D279C8AF6007E840D /* Assets.xcassets */; };
 		7BF30B81279C8AF6007E840D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF30B7F279C8AF6007E840D /* LaunchScreen.storyboard */; };
 		7BF30B8C279C8AF6007E840D /* RedditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF30B8B279C8AF6007E840D /* RedditTests.swift */; };
@@ -53,6 +70,25 @@
 		1B2E0B4131CA1C15F1FB2EF9 /* Pods-RedditTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditTests.release.xcconfig"; path = "Target Support Files/Pods-RedditTests/Pods-RedditTests.release.xcconfig"; sourceTree = "<group>"; };
 		51FBBE70FB456729B8268437 /* Pods-Reddit-RedditUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reddit-RedditUITests.debug.xcconfig"; path = "Target Support Files/Pods-Reddit-RedditUITests/Pods-Reddit-RedditUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		65F45BF65AEC5F3D0E21F569 /* Pods-Reddit-RedditUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reddit-RedditUITests.release.xcconfig"; path = "Target Support Files/Pods-Reddit-RedditUITests/Pods-Reddit-RedditUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7B32CEF9279DBC87006BCEEB /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		7B32CEFB279DBC96006BCEEB /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		7B32CEFD279DBCA9006BCEEB /* PostListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListCoordinator.swift; sourceTree = "<group>"; };
+		7B32CEFF279DBCED006BCEEB /* StoryboardBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardBase.swift; sourceTree = "<group>"; };
+		7B32CF01279DBD45006BCEEB /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		7B32CF03279DBD88006BCEEB /* Coordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinated.swift; sourceTree = "<group>"; };
+		7B32CF05279DBDDB006BCEEB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		7B32CF08279DBE72006BCEEB /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		7B32CF0A279DBE9F006BCEEB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7B32CF0D279DC02D006BCEEB /* PostList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostList.storyboard; sourceTree = "<group>"; };
+		7B32CF10279DD342006BCEEB /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		7B32CF11279DD342006BCEEB /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		7B32CF14279DD386006BCEEB /* PostTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		7B32CF16279DD3C1006BCEEB /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		7B32CF19279DD858006BCEEB /* TableView+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Config.swift"; sourceTree = "<group>"; };
+		7B32CF1B279DD87C006BCEEB /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		7B32CF1D279DD8B5006BCEEB /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		7B32CF1F279DD9EF006BCEEB /* TableViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewConfigurable.swift; sourceTree = "<group>"; };
+		7B32CF21279DE32B006BCEEB /* UIImageView+Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Downloader.swift"; sourceTree = "<group>"; };
 		7B6B608E279C9FEC00EE38EC /* APIConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationProtocol.swift; sourceTree = "<group>"; };
 		7B6B6091279CA10700EE38EC /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		7B6B6093279CA1CA00EE38EC /* PolicyConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyConfiguration.swift; sourceTree = "<group>"; };
@@ -66,8 +102,6 @@
 		7B6B60A8279D180200EE38EC /* PostChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostChild.swift; sourceTree = "<group>"; };
 		7BF30B71279C8AF4007E840D /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF30B74279C8AF4007E840D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7BF30B78279C8AF4007E840D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7BF30B7B279C8AF4007E840D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BF30B7D279C8AF6007E840D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BF30B80279C8AF6007E840D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BF30B82279C8AF6007E840D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,6 +168,54 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7B32CEF8279DBC5F006BCEEB /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				7B32CF0C279DC00B006BCEEB /* postList */,
+				7B32CF07279DBE64006BCEEB /* common */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		7B32CF07279DBE64006BCEEB /* common */ = {
+			isa = PBXGroup;
+			children = (
+				7B32CF0F279DD308006BCEEB /* postCell */,
+				7B32CF08279DBE72006BCEEB /* BaseCoordinator.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		7B32CF0C279DC00B006BCEEB /* postList */ = {
+			isa = PBXGroup;
+			children = (
+				7B32CEF9279DBC87006BCEEB /* PostListViewController.swift */,
+				7B32CEFB279DBC96006BCEEB /* PostListViewModel.swift */,
+				7B32CEFD279DBCA9006BCEEB /* PostListCoordinator.swift */,
+				7B32CF0D279DC02D006BCEEB /* PostList.storyboard */,
+			);
+			path = postList;
+			sourceTree = "<group>";
+		};
+		7B32CF0F279DD308006BCEEB /* postCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B32CF10279DD342006BCEEB /* PostTableViewCell.swift */,
+				7B32CF14279DD386006BCEEB /* PostTableViewCellViewModel.swift */,
+				7B32CF11279DD342006BCEEB /* PostTableViewCell.xib */,
+			);
+			path = postCell;
+			sourceTree = "<group>";
+		};
+		7B32CF18279DD846006BCEEB /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				7B32CF19279DD858006BCEEB /* TableView+Config.swift */,
+				7B32CF21279DE32B006BCEEB /* UIImageView+Downloader.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
 		7B6B608B279C9F5400EE38EC /* network */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				7B6B6090279CA0FB00EE38EC /* config */,
+				7B32CF18279DD846006BCEEB /* extension */,
 				7B6B608D279C9FD000EE38EC /* protocol */,
 			);
 			path = util;
@@ -156,7 +239,16 @@
 			isa = PBXGroup;
 			children = (
 				7B6B608E279C9FEC00EE38EC /* APIConfigurationProtocol.swift */,
+				7B32CF16279DD3C1006BCEEB /* CellViewModel.swift */,
+				7B32CF03279DBD88006BCEEB /* Coordinated.swift */,
+				7B32CF0A279DBE9F006BCEEB /* Coordinator.swift */,
+				7B32CF1D279DD8B5006BCEEB /* NibLoadableView.swift */,
 				7B6B6095279CAD8600EE38EC /* PerformRequestProtocol.swift */,
+				7B32CF1B279DD87C006BCEEB /* ReusableView.swift */,
+				7B32CEFF279DBCED006BCEEB /* StoryboardBase.swift */,
+				7B32CF1F279DD9EF006BCEEB /* TableViewConfigurable.swift */,
+				7B32CF01279DBD45006BCEEB /* View.swift */,
+				7B32CF05279DBDDB006BCEEB /* ViewModel.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -239,12 +331,11 @@
 		7BF30B73279C8AF4007E840D /* Reddit */ = {
 			isa = PBXGroup;
 			children = (
+				7B32CEF8279DBC5F006BCEEB /* ui */,
 				7B6B6097279D076F00EE38EC /* data */,
 				7B6B608B279C9F5400EE38EC /* network */,
 				7B6B608C279C9FC800EE38EC /* util */,
 				7BF30B74279C8AF4007E840D /* AppDelegate.swift */,
-				7BF30B78279C8AF4007E840D /* ViewController.swift */,
-				7BF30B7A279C8AF4007E840D /* Main.storyboard */,
 				7BF30B7D279C8AF6007E840D /* Assets.xcassets */,
 				7BF30B7F279C8AF6007E840D /* LaunchScreen.storyboard */,
 				7BF30B82279C8AF6007E840D /* Info.plist */,
@@ -379,8 +470,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF30B81279C8AF6007E840D /* LaunchScreen.storyboard in Resources */,
+				7B32CF0E279DC02D006BCEEB /* PostList.storyboard in Resources */,
 				7BF30B7E279C8AF6007E840D /* Assets.xcassets in Resources */,
-				7BF30B7C279C8AF4007E840D /* Main.storyboard in Resources */,
+				7B32CF13279DD342006BCEEB /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,17 +600,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B32CEFA279DBC87006BCEEB /* PostListViewController.swift in Sources */,
+				7B32CF1A279DD858006BCEEB /* TableView+Config.swift in Sources */,
 				7B6B6094279CA1CA00EE38EC /* PolicyConfiguration.swift in Sources */,
+				7B32CEFC279DBC96006BCEEB /* PostListViewModel.swift in Sources */,
 				7B6B60A3279D0CD600EE38EC /* PostList.swift in Sources */,
+				7B32CF09279DBE72006BCEEB /* BaseCoordinator.swift in Sources */,
+				7B32CF15279DD386006BCEEB /* PostTableViewCellViewModel.swift in Sources */,
+				7B32CF1C279DD87C006BCEEB /* ReusableView.swift in Sources */,
 				7B6B60A9279D180200EE38EC /* PostChild.swift in Sources */,
+				7B32CF0B279DBE9F006BCEEB /* Coordinator.swift in Sources */,
 				7B6B608F279C9FEC00EE38EC /* APIConfigurationProtocol.swift in Sources */,
 				7B6B60A7279D0E4800EE38EC /* Post.swift in Sources */,
+				7B32CF1E279DD8B5006BCEEB /* NibLoadableView.swift in Sources */,
+				7B32CF17279DD3C1006BCEEB /* CellViewModel.swift in Sources */,
 				7B6B609A279D079500EE38EC /* RedditError.swift in Sources */,
-				7BF30B79279C8AF4007E840D /* ViewController.swift in Sources */,
 				7B6B6092279CA10700EE38EC /* ApiConfig.swift in Sources */,
+				7B32CF12279DD342006BCEEB /* PostTableViewCell.swift in Sources */,
+				7B32CF06279DBDDB006BCEEB /* ViewModel.swift in Sources */,
+				7B32CEFE279DBCA9006BCEEB /* PostListCoordinator.swift in Sources */,
 				7BF30B75279C8AF4007E840D /* AppDelegate.swift in Sources */,
 				7B6B6096279CAD8600EE38EC /* PerformRequestProtocol.swift in Sources */,
+				7B32CF04279DBD88006BCEEB /* Coordinated.swift in Sources */,
+				7B32CF20279DD9EF006BCEEB /* TableViewConfigurable.swift in Sources */,
 				7B6B60A0279D099000EE38EC /* PostRouter.swift in Sources */,
+				7B32CF02279DBD45006BCEEB /* View.swift in Sources */,
+				7B32CF00279DBCED006BCEEB /* StoryboardBase.swift in Sources */,
+				7B32CF22279DE32B006BCEEB /* UIImageView+Downloader.swift in Sources */,
 				7B6B60A5279D0DF300EE38EC /* PostData.swift in Sources */,
 				7B6B609D279D08BB00EE38EC /* NetworkClient.swift in Sources */,
 			);
@@ -557,14 +665,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7BF30B7A279C8AF4007E840D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7BF30B7B279C8AF4007E840D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7BF30B7F279C8AF6007E840D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -704,7 +804,6 @@
 				INFOPLIST_FILE = Reddit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -732,7 +831,6 @@
 				INFOPLIST_FILE = Reddit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

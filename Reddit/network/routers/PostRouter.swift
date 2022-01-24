@@ -10,7 +10,7 @@ import Alamofire
 
 enum PostRouter: APIConfigurationProtocol {
     
-    case top
+    case top(after: String, limit: Int)
     
     var httpMethod: HTTPMethod {
         return .get
@@ -21,7 +21,11 @@ enum PostRouter: APIConfigurationProtocol {
     }
     
     var queryItems: [URLQueryItem]? {
-        return nil
+        switch self {
+        case .top(let after, let limit):
+            return [URLQueryItem(name: "limit", value: limit.description),
+                    URLQueryItem(name: "after", value: after)]
+        }
     }
     
     var parameters: Parameters? {
