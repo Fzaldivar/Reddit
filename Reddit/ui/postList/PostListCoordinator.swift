@@ -17,4 +17,9 @@ final class PostListCoordinator: BaseCoordinator {
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: animated)
     }
+    
+    func pushToPostDetail(_ post: Post) {
+        let coordinator = PostDetailCoordinator(post: post, navigationController: navigationController)
+        coordinator.navigate(animated: true)
+    }
 }
