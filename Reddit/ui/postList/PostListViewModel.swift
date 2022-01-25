@@ -65,15 +65,19 @@ final class PostListViewModel: ViewModel {
         after = postList.data.after
     }
     
-    func loadMoreIfNeeded(index: Int) -> Bool {
+    func loadMoreIfNeeded(index: Int, deletedItems: Int) -> Bool {
         let nextPage = currentNextPage
-        let threshold = (itemCount * nextPage) - loadMoreThreshold
-        if loadedIndex < threshold && index >= threshold {
+        let threshold = (itemCount  * nextPage) - (loadMoreThreshold + deletedItems)
+        if (loadedIndex - deletedItems) < threshold && index >= threshold {
             loadedIndex = index
             currentNextPage += 1
             return true
         }
 
         return false
+    }
+    
+    func remove(_ index: Int) {
+        dataSource.remove(at: index)
     }
 }

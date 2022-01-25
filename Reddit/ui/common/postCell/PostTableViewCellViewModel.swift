@@ -11,7 +11,7 @@ class PostTableViewCellViewModel: CellViewModel {
     
     // MARK: - Properties
 
-    private let post: Post
+    let post: Post
     
     // MARK: - Initializer
     
@@ -39,5 +39,9 @@ class PostTableViewCellViewModel: CellViewModel {
     
     func created() -> Int {
         return post.created
+    }
+    
+    func isPostRead() -> Bool {
+        return PostLibrary.shared.isPostRead(post)
     }
 }

@@ -28,6 +28,12 @@
 		7B32CF1E279DD8B5006BCEEB /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF1D279DD8B5006BCEEB /* NibLoadableView.swift */; };
 		7B32CF20279DD9EF006BCEEB /* TableViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF1F279DD9EF006BCEEB /* TableViewConfigurable.swift */; };
 		7B32CF22279DE32B006BCEEB /* UIImageView+Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF21279DE32B006BCEEB /* UIImageView+Downloader.swift */; };
+		7B32CF25279E312D006BCEEB /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF24279E312D006BCEEB /* PostDetailViewController.swift */; };
+		7B32CF27279E3154006BCEEB /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF26279E3154006BCEEB /* PostDetailViewModel.swift */; };
+		7B32CF29279E31D0006BCEEB /* PostDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF28279E31D0006BCEEB /* PostDetailCoordinator.swift */; };
+		7B32CF2B279E3354006BCEEB /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B32CF2A279E3354006BCEEB /* PostDetail.storyboard */; };
+		7B32CF2D279E3B6F006BCEEB /* String+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF2C279E3B6F006BCEEB /* String+Url.swift */; };
+		7B32CF30279E5491006BCEEB /* PostLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32CF2F279E5491006BCEEB /* PostLibrary.swift */; };
 		7B6B608F279C9FEC00EE38EC /* APIConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B608E279C9FEC00EE38EC /* APIConfigurationProtocol.swift */; };
 		7B6B6092279CA10700EE38EC /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B6091279CA10700EE38EC /* ApiConfig.swift */; };
 		7B6B6094279CA1CA00EE38EC /* PolicyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6B6093279CA1CA00EE38EC /* PolicyConfiguration.swift */; };
@@ -89,6 +95,12 @@
 		7B32CF1D279DD8B5006BCEEB /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		7B32CF1F279DD9EF006BCEEB /* TableViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewConfigurable.swift; sourceTree = "<group>"; };
 		7B32CF21279DE32B006BCEEB /* UIImageView+Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Downloader.swift"; sourceTree = "<group>"; };
+		7B32CF24279E312D006BCEEB /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		7B32CF26279E3154006BCEEB /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
+		7B32CF28279E31D0006BCEEB /* PostDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCoordinator.swift; sourceTree = "<group>"; };
+		7B32CF2A279E3354006BCEEB /* PostDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetail.storyboard; sourceTree = "<group>"; };
+		7B32CF2C279E3B6F006BCEEB /* String+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Url.swift"; sourceTree = "<group>"; };
+		7B32CF2F279E5491006BCEEB /* PostLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLibrary.swift; sourceTree = "<group>"; };
 		7B6B608E279C9FEC00EE38EC /* APIConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurationProtocol.swift; sourceTree = "<group>"; };
 		7B6B6091279CA10700EE38EC /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		7B6B6093279CA1CA00EE38EC /* PolicyConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyConfiguration.swift; sourceTree = "<group>"; };
@@ -171,6 +183,7 @@
 		7B32CEF8279DBC5F006BCEEB /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				7B32CF23279E3110006BCEEB /* postDetail */,
 				7B32CF0C279DC00B006BCEEB /* postList */,
 				7B32CF07279DBE64006BCEEB /* common */,
 			);
@@ -212,8 +225,28 @@
 			children = (
 				7B32CF19279DD858006BCEEB /* TableView+Config.swift */,
 				7B32CF21279DE32B006BCEEB /* UIImageView+Downloader.swift */,
+				7B32CF2C279E3B6F006BCEEB /* String+Url.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		7B32CF23279E3110006BCEEB /* postDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7B32CF24279E312D006BCEEB /* PostDetailViewController.swift */,
+				7B32CF26279E3154006BCEEB /* PostDetailViewModel.swift */,
+				7B32CF28279E31D0006BCEEB /* PostDetailCoordinator.swift */,
+				7B32CF2A279E3354006BCEEB /* PostDetail.storyboard */,
+			);
+			path = postDetail;
+			sourceTree = "<group>";
+		};
+		7B32CF2E279E5456006BCEEB /* cache */ = {
+			isa = PBXGroup;
+			children = (
+				7B32CF2F279E5491006BCEEB /* PostLibrary.swift */,
+			);
+			path = cache;
 			sourceTree = "<group>";
 		};
 		7B6B608B279C9F5400EE38EC /* network */ = {
@@ -334,6 +367,7 @@
 				7B32CEF8279DBC5F006BCEEB /* ui */,
 				7B6B6097279D076F00EE38EC /* data */,
 				7B6B608B279C9F5400EE38EC /* network */,
+				7B32CF2E279E5456006BCEEB /* cache */,
 				7B6B608C279C9FC800EE38EC /* util */,
 				7BF30B74279C8AF4007E840D /* AppDelegate.swift */,
 				7BF30B7D279C8AF6007E840D /* Assets.xcassets */,
@@ -473,6 +507,7 @@
 				7B32CF0E279DC02D006BCEEB /* PostList.storyboard in Resources */,
 				7BF30B7E279C8AF6007E840D /* Assets.xcassets in Resources */,
 				7B32CF13279DD342006BCEEB /* PostTableViewCell.xib in Resources */,
+				7B32CF2B279E3354006BCEEB /* PostDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,7 +641,9 @@
 				7B32CEFC279DBC96006BCEEB /* PostListViewModel.swift in Sources */,
 				7B6B60A3279D0CD600EE38EC /* PostList.swift in Sources */,
 				7B32CF09279DBE72006BCEEB /* BaseCoordinator.swift in Sources */,
+				7B32CF2D279E3B6F006BCEEB /* String+Url.swift in Sources */,
 				7B32CF15279DD386006BCEEB /* PostTableViewCellViewModel.swift in Sources */,
+				7B32CF25279E312D006BCEEB /* PostDetailViewController.swift in Sources */,
 				7B32CF1C279DD87C006BCEEB /* ReusableView.swift in Sources */,
 				7B6B60A9279D180200EE38EC /* PostChild.swift in Sources */,
 				7B32CF0B279DBE9F006BCEEB /* Coordinator.swift in Sources */,
@@ -618,10 +655,12 @@
 				7B6B6092279CA10700EE38EC /* ApiConfig.swift in Sources */,
 				7B32CF12279DD342006BCEEB /* PostTableViewCell.swift in Sources */,
 				7B32CF06279DBDDB006BCEEB /* ViewModel.swift in Sources */,
+				7B32CF29279E31D0006BCEEB /* PostDetailCoordinator.swift in Sources */,
 				7B32CEFE279DBCA9006BCEEB /* PostListCoordinator.swift in Sources */,
 				7BF30B75279C8AF4007E840D /* AppDelegate.swift in Sources */,
 				7B6B6096279CAD8600EE38EC /* PerformRequestProtocol.swift in Sources */,
 				7B32CF04279DBD88006BCEEB /* Coordinated.swift in Sources */,
+				7B32CF27279E3154006BCEEB /* PostDetailViewModel.swift in Sources */,
 				7B32CF20279DD9EF006BCEEB /* TableViewConfigurable.swift in Sources */,
 				7B6B60A0279D099000EE38EC /* PostRouter.swift in Sources */,
 				7B32CF02279DBD45006BCEEB /* View.swift in Sources */,
@@ -629,6 +668,7 @@
 				7B32CF22279DE32B006BCEEB /* UIImageView+Downloader.swift in Sources */,
 				7B6B60A5279D0DF300EE38EC /* PostData.swift in Sources */,
 				7B6B609D279D08BB00EE38EC /* NetworkClient.swift in Sources */,
+				7B32CF30279E5491006BCEEB /* PostLibrary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,18 +8,16 @@
 import UIKit
 
 class PostListViewController: UIViewController, StoryboardBased, View, Coordinated, TableViewConfigurable {
-
+    
     // MARK: - Outlets
     
     @IBOutlet var postTableView: UITableView!
     
     // MARK: - Properties
-
+    
     var coordinator: PostListCoordinator!
     var viewModel: PostListViewModel!
     private var tableViewDataSource: PostListDataSource!
-    
-    typealias PostListDataSource = UITableViewDiffableDataSource<Int, PostTableViewCellViewModel>
     
     // MARK: - Lifecycle methods
     
@@ -29,7 +27,7 @@ class PostListViewController: UIViewController, StoryboardBased, View, Coordinat
     }
     
     // MARK: - Configuration methods
-
+    
     private func initialSetup() {
         configureTableView()
         loadPosts()
@@ -56,17 +54,23 @@ class PostListViewController: UIViewController, StoryboardBased, View, Coordinat
     }
     
     private func loadMoreIfNeeded(from index: Int) {
-        guard viewModel.loadMoreIfNeeded(index: index) else { return }
+        guard viewModel.loadMoreIfNeeded(index: index, deletedItems: tableViewDataSource.deletedItems) else { return }
         loadPosts()
+    }
+    
+    private func reloadSnapshot() {
+        var snapshot = tableViewDataSource.snapshot()
+        snapshot.reloadSections([0])
+        tableViewDataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 
 // MARK: - UITableViewDataSource
 
 extension PostListViewController {
-
+    
     private func prepareDataSource() -> PostListDataSource {
-        return UITableViewDiffableDataSource(
+        let dataSource = PostListDataSource(
             tableView: postTableView,
             cellProvider: { [unowned self] tableView, indexPath, cellViewModel -> UITableViewCell? in
                 let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as PostTableViewCell
@@ -75,6 +79,9 @@ extension PostListViewController {
                 return cell
             }
         )
+        
+        dataSource.viewModel = viewModel
+        return dataSource
     }
 }
 
@@ -88,5 +95,42 @@ extension PostListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 400
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = viewModel.dataSource[indexPath.row].post
+        PostLibrary.shared.savePost(post)
+        reloadSnapshot()
+        coordinator.pushToPostDetail(post)
+    }
+}
+
+// MARK: - PostListDataSource
+
+private class PostListDataSource: UITableViewDiffableDataSource<Int, PostTableViewCellViewModel> {
+    
+    var deletedItems = 0
+    var viewModel: PostListViewModel!
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            DispatchQueue.main.async {
+                tableView.beginUpdates()
+                self.deleteRow(indexPath.row)
+                tableView.endUpdates()
+            }
+        }
+    }
+    
+    private func deleteRow(_ index: Int) {
+        var snapshot = self.snapshot()
+        snapshot.deleteItems([snapshot.itemIdentifiers[index]])
+        deletedItems += 1
+        viewModel.remove(index)
+        apply(snapshot)
     }
 }

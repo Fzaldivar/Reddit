@@ -8,11 +8,15 @@
 import Foundation
 
 struct Post: Decodable {
+    
+    // MARK: - Properties
+    
     let title: String
     let author: String
     let thumbnail: String
     let comments: Int
     let created: Int
+    let postId: String
     
     private enum CodingKeys: String, CodingKey {
         case title
@@ -20,6 +24,7 @@ struct Post: Decodable {
         case thumbnail
         case comments = "num_comments"
         case created
+        case postId = "id"
     }
 }
 

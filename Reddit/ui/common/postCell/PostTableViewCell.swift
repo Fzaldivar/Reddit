@@ -16,6 +16,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet var authorLabel: UILabel!
     @IBOutlet var commentsLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var isReadLabel: UILabel!
     
     // MARK: - Properties
     
@@ -39,7 +40,18 @@ class PostTableViewCell: UITableViewCell {
         authorLabel.text = "Author: \(viewModel.author())"
         commentsLabel.text = "\(viewModel.comments()) comments"
         timeLabel.text = "\(hoursDifference(viewModel.created())) hours ago"
-        postImageView.imageFromURL(urlString: viewModel.thumbnail())
+        updateReadStatus()
+        
+        if viewModel.thumbnail().isUrl() {
+            postImageView.imageFromURL(urlString: viewModel.thumbnail())
+        } else {
+            postImageView.image = nil
+        }
+    }
+    
+    func updateReadStatus() {
+        isReadLabel.text = viewModel.isPostRead() ? "Read" : "Unread"
+        isReadLabel.textColor = viewModel.isPostRead() ? .systemGreen : .red
     }
     
     private func hoursDifference(_ time: Int)  -> Int {
