@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Reddit
+
+  Created by Fernando Zaldivar on 25/1/22.
+  
+*/
+
+// MARK: - Post List ViewController
+
+"post_list_view_controller_title" = "Reddit";
+"post_list_view_controller_delete" = "Delete";
+"post_list_view_controller_reload" = "Reload";
+
+// MARK: - Post Detail
+
+"post_detail_view_controller_save" = "Saved!";
+"post_detail_view_controller_button" = "Ok";
