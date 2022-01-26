@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Initial loader
     
     private func initialLoading() {
-        PostLibrary.shared.clear()
         rootCoordinator = PostListCoordinator(navigationController: UINavigationController())
         rootCoordinator.navigate(animated: false)
 

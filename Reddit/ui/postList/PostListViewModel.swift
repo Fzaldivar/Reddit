@@ -12,6 +12,8 @@ final class PostListViewModel: ViewModel {
     // MARK: - Properties
 
     var title: String
+    let deleteText: String
+    let reloadText: String
     private var currentNextPage: Int
     private let networkClient: PerformRequestProtocol
     private(set) var dataSource: [PostTableViewCellViewModel]
@@ -31,14 +33,16 @@ final class PostListViewModel: ViewModel {
     // MARK: - Initializer
 
     init(networkClient: PerformRequestProtocol = NetworkClient()) {
-        self.title = ""
+        self.title = PostListStrings.title.localized
         self.after = ""
         self.networkClient = networkClient
         self.dataSource = []
         self.currentNextPage = 1
-        self.itemCount = 5
+        self.itemCount = 15
         self.loadMoreThreshold = 2
         self.loadedIndex = 0
+        self.deleteText = PostListStrings.delete.localized
+        self.reloadText = PostListStrings.reload.localized
     }
     
     // MARK: - Networking methods
@@ -60,9 +64,11 @@ final class PostListViewModel: ViewModel {
     
     // MARK: - Utitlity methods
     
-    private func updateDataSource(_ postList: PostList) {
-        dataSource.append(contentsOf: postList.posts().map { PostTableViewCellViewModel(post: $0) })
-        after = postList.data.after
+    func restartData() {
+        after = ""
+        currentNextPage = 1
+        loadedIndex = 0
+        dataSource = []
     }
     
     func loadMoreIfNeeded(index: Int, deletedItems: Int) -> Bool {
@@ -79,5 +85,28 @@ final class PostListViewModel: ViewModel {
     
     func remove(_ index: Int) {
         dataSource.remove(at: index)
+    }
+    
+    private func updateDataSource(_ postList: PostList) {
+        dataSource.append(contentsOf: postList.children.map { PostTableViewCellViewModel(post: $0) })
+        after = postList.after
+    }
+    
+    func encodeRestorableState(with coder: NSCoder) {
+        coder.encode(after, forKey: "after")
+        coder.encode(currentNextPage, forKey: "currentNextPage")
+        coder.encode(loadedIndex, forKey: "loadedIndex")
+    }
+    
+    func decodeRestorableState(with coder: NSCoder) {
+        guard let afterValue = coder.decodeObject(forKey: "after") as? String,
+              let currentNextPageValue = coder.decodeObject(forKey: "currentNextPage") as? Int,
+              let loadedIndexValue = coder.decodeObject(forKey: "loadedIndex") as? Int else {
+            return
+        }
+        
+        after = afterValue
+        currentNextPage = currentNextPageValue
+        loadedIndex = loadedIndexValue
     }
 }

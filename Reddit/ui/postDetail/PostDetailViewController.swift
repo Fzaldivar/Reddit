@@ -33,8 +33,8 @@ class PostDetailViewController: UIViewController, StoryboardBased, View, Coordin
     }
     
     @objc private func saveCompleted(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        let alert = UIAlertController(title: "Saved!", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        let alert = UIAlertController(title: viewModel.messageTitle, message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: viewModel.buttonTitle, style: .default))
         self.present(alert, animated: true)
     }
     

@@ -13,12 +13,16 @@ final class PostDetailViewModel: ViewModel {
 
     var title: String
     private let post: Post
+    let messageTitle: String
+    let buttonTitle: String
     
     // MARK: - Initializer
 
     init(post: Post) {
         self.title = post.title
         self.post = post
+        self.messageTitle = PostDetailStrings.message.localized
+        self.buttonTitle = PostDetailStrings.button.localized
     }
     
     // MARK: - Utility methods

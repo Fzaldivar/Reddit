@@ -18,6 +18,13 @@ class PostListViewController: UIViewController, StoryboardBased, View, Coordinat
     var coordinator: PostListCoordinator!
     var viewModel: PostListViewModel!
     private var tableViewDataSource: PostListDataSource!
+    private var rightButtonStatus: RightButtonStatus = .delete
+    private var refreshControl: UIRefreshControl!
+    
+    private enum RightButtonStatus {
+        case delete
+        case reload
+    }
     
     // MARK: - Lifecycle methods
     
@@ -29,21 +36,36 @@ class PostListViewController: UIViewController, StoryboardBased, View, Coordinat
     // MARK: - Configuration methods
     
     private func initialSetup() {
+        configureResfreshControl()
         configureTableView()
         loadPosts()
+        title = viewModel.title
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButtonTitle(), style: .plain, target: self, action: #selector(deleteAll))
+    }
+    
+    private func configureResfreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshPhotos), for: .valueChanged)
+    }
+    
+    private func rightButtonTitle() -> String {
+        return rightButtonStatus == .delete ? viewModel.deleteText : viewModel.reloadText
     }
     
     // MARK: - Utility methods
     
     private func configureTableView() {
+        postTableView.addSubview(refreshControl)
         tableViewDataSource = prepareDataSource()
         configureTableViewWithDinamycSize(&postTableView, cell: PostTableViewCell.self)
     }
     
     private func loadPosts() {
+        LoadingOverlay.shared.showOverlay()
         viewModel.loadPosts { [weak self] result in
             guard let self = self else { return }
             
+            LoadingOverlay.shared.hideOverlayView()
             switch result {
             case .success:
                 self.tableViewDataSource.apply(self.viewModel.snapshot, animatingDifferences: false)
@@ -62,6 +84,41 @@ class PostListViewController: UIViewController, StoryboardBased, View, Coordinat
         var snapshot = tableViewDataSource.snapshot()
         snapshot.reloadSections([0])
         tableViewDataSource.apply(snapshot, animatingDifferences: false)
+    }
+    
+    private func removeAllPosts() {
+        rightButtonStatus = .reload
+        clearPosts(true)
+    }
+    
+    private func restartPosts() {
+        rightButtonStatus = .delete
+        loadPosts()
+    }
+    
+    private func clearPosts( _ animated: Bool) {
+        var snapshot = tableViewDataSource.snapshot()
+        snapshot.deleteAllItems()
+        tableViewDataSource.apply(snapshot, animatingDifferences: animated)
+        tableViewDataSource.deletedItems = 0
+        viewModel.restartData()
+    }
+    
+    private func updateRightButton() {
+        navigationItem.rightBarButtonItem?.title = rightButtonTitle()
+    }
+    
+    @objc private func deleteAll() {
+        rightButtonStatus == .delete ? removeAllPosts() : restartPosts()
+        updateRightButton()
+    }
+    
+    @objc private func refreshPhotos() {
+        rightButtonStatus = .delete
+        updateRightButton()
+        clearPosts(false)
+        loadPosts()
+        refreshControl.endRefreshing()
     }
 }
 
