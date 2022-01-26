@@ -4,24 +4,30 @@
 //
 //  Created by Fernando Zaldivar on 22/1/22.
 //
+//
 
 import Foundation
 
-struct PostList: Decodable {
+struct PostList {
+    var children: [Post]
+    var after: String
+}
+
+// MARK: - Decodable
+
+extension PostList: Decodable {
     
-    // MARK: - Properties
-    
-    var data: PostData
-    
-    // MARK: - Initializer methods
-    
-    init(_ data: PostData = PostData(children: [], after: "")) {
-        self.data = data
+    private enum CodingKeys: String, CodingKey {
+        case children
+        case after
+        case data
     }
     
-    // MARK: - Utility methods
-    
-    func posts() -> [Post] {
-        return data.children.map { $0.data }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let dataContainer = try values.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
+        
+        after = try dataContainer.decode(String.self, forKey: .after)
+        children = try dataContainer.decode([Post].self, forKey: .children)
     }
 }
