@@ -1,5 +1,4 @@
 # Reddit
-Reddit Top
 
 ## Abstract
 
